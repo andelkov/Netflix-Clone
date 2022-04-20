@@ -18,6 +18,8 @@
 		A16E56E7280EFA2C007700C8 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E56E6280EFA2C007700C8 /* DownloadsViewController.swift */; };
 		A16E56EE280F31C0007700C8 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E56ED280F31C0007700C8 /* CollectionViewTableViewCell.swift */; };
 		A16E56F0280F6D61007700C8 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E56EF280F6D61007700C8 /* HeroHeaderUIView.swift */; };
+		A16E56F428109636007700C8 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E56F328109636007700C8 /* APICaller.swift */; };
+		A16E56F62810CF44007700C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E56F52810CF43007700C8 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A16E56E6280EFA2C007700C8 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		A16E56ED280F31C0007700C8 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		A16E56EF280F6D61007700C8 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		A16E56F328109636007700C8 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		A16E56F52810CF43007700C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		A16E56E8280F3114007700C8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A16E56F328109636007700C8 /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		A16E56EB280F3150007700C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A16E56F52810CF43007700C8 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,11 +209,13 @@
 				A16E56E5280EF9E6007700C8 /* SearchViewController.swift in Sources */,
 				A16E56D0280EF1A7007700C8 /* MainTabBarViewController.swift in Sources */,
 				A16E56EE280F31C0007700C8 /* CollectionViewTableViewCell.swift in Sources */,
+				A16E56F428109636007700C8 /* APICaller.swift in Sources */,
 				A16E56F0280F6D61007700C8 /* HeroHeaderUIView.swift in Sources */,
 				A16E56E7280EFA2C007700C8 /* DownloadsViewController.swift in Sources */,
 				A16E56CC280EF1A7007700C8 /* AppDelegate.swift in Sources */,
 				A16E56CE280EF1A7007700C8 /* SceneDelegate.swift in Sources */,
 				A16E56E3280EF985007700C8 /* UpcomingViewController.swift in Sources */,
+				A16E56F62810CF44007700C8 /* Movie.swift in Sources */,
 				A16E56E1280EF95D007700C8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
