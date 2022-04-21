@@ -40,6 +40,6 @@ class TitleCollectionViewCell: UICollectionViewCell {
                     return
                 }
                 
-                posterImageView.sd_setImage(with: url, completed: nil)
+        posterImageView.sd_setImage(with: url, completed: nil)
     }
 }
