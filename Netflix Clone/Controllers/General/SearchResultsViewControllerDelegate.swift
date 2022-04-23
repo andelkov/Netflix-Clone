@@ -7,6 +7,8 @@
 
 import UIKit
 
+import UIKit
+
 protocol SearchResultsViewControllerDelegate: AnyObject {
     func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel)
 }
@@ -47,10 +49,6 @@ class SearchResultsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         searchResultsCollectionView.frame = view.bounds
     }
-    
-
-    
-
 }
 
 
@@ -87,8 +85,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 print(error.localizedDescription)
             }
         }
-        
-
+      
     }
     
 }
