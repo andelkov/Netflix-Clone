@@ -20,7 +20,7 @@ class DownloadsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         title = "Downloads"
         view.addSubview(downloadedTable)
         navigationController?.navigationBar.prefersLargeTitles = true

@@ -31,7 +31,7 @@ class HomeViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self

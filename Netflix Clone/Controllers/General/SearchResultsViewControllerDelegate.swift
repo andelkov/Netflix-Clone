@@ -36,7 +36,7 @@ class SearchResultsViewController: UIViewController {
         super.viewDidLoad()
 
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         view.addSubview(searchResultsCollectionView)
         
         

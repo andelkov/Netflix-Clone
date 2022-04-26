@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         
         view.addSubview(discoverTable)
         discoverTable.delegate = self

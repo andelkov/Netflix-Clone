@@ -15,7 +15,8 @@ class TitlePreviewViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.text = "Harry potter"
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 3
         return label
     }()
     
@@ -25,7 +26,7 @@ class TitlePreviewViewController: UIViewController {
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "This is the best movie ever to watch as a kid!"
+        label.textAlignment = .justified
         return label
     }()
     
@@ -50,7 +51,7 @@ class TitlePreviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
@@ -71,12 +72,14 @@ class TitlePreviewViewController: UIViewController {
         let titleLabelConstraints = [
             titleLabel.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20)
         ]
         
         let overviewLabelConstraints = [
             overviewLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
             overviewLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ]
         
         let downloadButtonConstraints = [
