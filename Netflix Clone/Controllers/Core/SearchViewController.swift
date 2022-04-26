@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
-        view.backgroundColor = .black
+        view.backgroundColor = .systemBackground
         
         view.addSubview(discoverTable)
         discoverTable.delegate = self
@@ -145,8 +145,6 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
             }
         }
     }
-    
-    
     
     func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
         

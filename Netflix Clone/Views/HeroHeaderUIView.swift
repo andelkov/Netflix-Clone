@@ -9,6 +9,7 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
+    var title: Title?
     
     private let downloadButton: UIButton = {
         let button = UIButton()
@@ -53,10 +54,31 @@ class HeroHeaderUIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(heroImageView)
-        addGradient()
         addSubview(playButton)
         addSubview(downloadButton)
+        addGradient()
         applyConstraints()
+        configureButton() 
+        
+    }
+    
+    private func configureButton() {
+        downloadButton.addTarget(self, action: #selector(downloadTitle), for: .touchUpInside)
+    }
+    
+    @objc func downloadTitle() {
+        
+        guard let title = self.title else {return}
+        
+        DataPersistenceManager.shared.downloadTitleWith(model: title) { result in
+            switch result {
+            case .success():
+                NotificationCenter.default.post(name: NSNotification.Name("downloaded"), object: nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
     
     private func applyConstraints() {
@@ -95,5 +117,7 @@ class HeroHeaderUIView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    
     
 }

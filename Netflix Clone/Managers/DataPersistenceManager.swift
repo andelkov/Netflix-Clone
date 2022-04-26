@@ -62,7 +62,6 @@ class DataPersistenceManager {
         request = TitleItem.fetchRequest()
         
         do {
-            
             let titles = try context.fetch(request)
             completion(.success(titles))
             
