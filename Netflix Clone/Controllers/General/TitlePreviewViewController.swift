@@ -10,6 +10,8 @@ import WebKit
 
 class TitlePreviewViewController: UIViewController {
     
+    var movieTitle: Title?
+    
     private let titleLabel: UILabel = {
        
         let label = UILabel()
@@ -58,6 +60,7 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(downloadButton)
         
         configureConstraints()
+        configureButton()
     }
     
     
@@ -93,6 +96,25 @@ class TitlePreviewViewController: UIViewController {
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(overviewLabelConstraints)
         NSLayoutConstraint.activate(downloadButtonConstraints)
+        
+    }
+    
+    private func configureButton() {
+        downloadButton.addTarget(self, action: #selector(downloadTitle), for: .touchUpInside)
+    }
+    
+    @objc func downloadTitle() {
+        
+        guard let title = self.movieTitle else {return}
+        
+        DataPersistenceManager.shared.downloadTitleWith(model: title) { result in
+            switch result {
+            case .success():
+                NotificationCenter.default.post(name: NSNotification.Name("downloaded"), object: nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
     }
     

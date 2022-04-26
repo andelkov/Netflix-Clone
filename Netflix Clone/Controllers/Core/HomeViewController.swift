@@ -53,7 +53,7 @@ class HomeViewController: UIViewController  {
                 
                 self?.randomTrendingMovie = selectedTitle
                 self?.headerView?.configure(with: TitleViewModel(titleName: selectedTitle?.original_title ?? "", posterURL: selectedTitle?.poster_path ?? ""))
-                self?.headerView?.title = selectedTitle!
+                self?.headerView?.movieTitle = selectedTitle!
                 
             case .failure(let erorr):
                 print(erorr.localizedDescription)
@@ -195,9 +195,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: CollectionViewTableViewCellDelegate {
-    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel, movieTitle: Title) {
         DispatchQueue.main.async { [weak self] in
             let vc = TitlePreviewViewController()
+            vc.movieTitle = movieTitle
             vc.configure(with: viewModel)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
